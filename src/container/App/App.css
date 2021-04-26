@@ -1,0 +1,138 @@
+.App {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-loader {
+  /* height: 40vmin; */
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  opacity: 1;
+  -webkit-animation: animInitialHeader 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+  animation: animInitialHeader 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+  fill: #555;
+}
+.page-loader .logo {
+  min-width: 20vmin;
+}
+.page-loader .logo svg path,
+.page-loader .logo svg text {
+  -webkit-transition: all 2s ease 0.3s;
+  transition: all 2s ease 0.3s;
+  fill: #555;
+}
+
+.AppContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.AppContainer .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.AppContainer .logo svg {
+  display: inline-block;
+  width: 10vmin;
+}
+.AppContainer .logo svg path {
+  fill: #333;
+}
+.AppContainer .Content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 450px;
+}
+.AppContainer .Content > * {
+  margin: 0 0.5rem;
+  /* background-color: blanchedalmond; */
+  border: 1px solid #fafafa;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.AppContainer .Content > *:first-child {
+  margin-left: 0;
+}
+.AppContainer .Content > *:last-child {
+  margin-right: 0;
+}
+.AppContainer .Content > aside {
+  width: 350px;
+}
+.AppContainer .Content main {
+  flex: 1;
+}
+.AppContainer .Content main,
+.AppContainer .Content aside {
+  display: flex;
+}
+.AppContainer header,
+.AppContainer footer {
+  display: flex;
+}
+.AppContainer header {
+  flex-direction: column;
+}
+.AppContainer header .progress {
+  padding: 2rem 1rem;
+}
+.AppContainer footer .Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  flex: 1;
+}
+
+button,
+input[type="button"] {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 500px, 0);
+  }
+}
+
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 500px, 0);
+    transform: translate3d(0, 500px, 0);
+  }
+}
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0)
+      scale3d(0.65, 0.65, 1);
+  }
+}
+
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0)
+      scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0)
+      scale3d(0.65, 0.65, 1);
+  }
+}
