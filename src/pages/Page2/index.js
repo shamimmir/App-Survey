@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
 import img2 from "../../img/img2.svg";
-import { FormContainer, FormImage, FormQquestion } from "../../style";
+import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+import { stylesFaq, config, dataFaq } from "./Faq";
+import Faq from "react-faq-component";
 
 class Page extends Component {
   render() {
@@ -40,7 +42,16 @@ class Page extends Component {
 
 class PageTips extends Component {
   render() {
-    return <div>Page 1 Tips</div>;
+    return (
+      <FaqStyle>
+        <Faq
+          style={{ paddingRight: 20 }}
+          data={dataFaq}
+          styles={stylesFaq}
+          config={config}
+        />
+      </FaqStyle>
+    );
   }
 }
 
