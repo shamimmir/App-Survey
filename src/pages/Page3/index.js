@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
 import img3 from "../../img/img3.svg";
-import { FormContainer, FormImage, FormQquestion } from "../../style";
+import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+import Faq from "./Faq";
 
 class Page extends Component {
   render() {
@@ -16,23 +17,23 @@ class Page extends Component {
           transition={pageTransition}
         >
           <FormImage>
-            <img src={img3} alt="img" />
-          </FormImage>
-          <FormQquestion>
-            <div className="row">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing:</span>
-              <span>
-                <input
-                  className="slide-up"
-                  id="card"
-                  type="text"
-                  placeholder="Enter A Number!"
-                />
+            <form class="form">
+              <h2>Do you plan to rent out your house?</h2>
+              <div class="inputGroup">
+                <input id="radio1" name="radio" type="radio" />
+                <label for="radio1">No</label>
+              </div>
+              <div class="inputGroup">
+                <input id="radio2" name="radio" type="radio" />
+                <label for="radio2">Basement</label>
+              </div>
 
-                <label for="card">Down Payment</label>
-              </span>
-            </div>
-          </FormQquestion>
+              <div class="inputGroup">
+                <input id="radio3" name="radio" type="radio" />
+                <label for="radio3">Entire House</label>
+              </div>
+            </form>
+          </FormImage>
         </motion.div>
       </FormContainer>
     );
@@ -41,7 +42,11 @@ class Page extends Component {
 
 class PageTips extends Component {
   render() {
-    return <div>Page 1 Tips</div>;
+    return (
+      <FaqStyle>
+        <Faq />
+      </FaqStyle>
+    );
   }
 }
 

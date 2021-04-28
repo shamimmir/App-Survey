@@ -2,7 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
-import img1 from "../../img/img1.svg";
+import img4 from "../../img/img4.svg";
 import {
   FormContainer,
   FormImage,
@@ -13,14 +13,19 @@ import {
 const Faq = () => {
   return (
     <div>
-      <ImageSideBar src={img1} alt="img" />
-      <h3>Lorem ipsum dolor sit amet.</h3>
+      <ImageSideBar src={img4} alt="img" />
+      <h3> sit amet consectetur</h3>
+
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima in quam
-        quibusdam! Repellat cupiditate illum sed adipisci quos dicta sit.
+        Adipisicing elit. Minima in quam quibusdam! Repellat cupiditate illum
+        sed adipisci quos dicta sit. Lorem ipsum dolor sit amet.
       </p>
     </div>
   );
 };
 
 export default Faq;
+
+const Image = styled.img`
+  width: 100%;
+`;

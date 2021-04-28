@@ -7,6 +7,15 @@ export const fadeOut = {
   },
 };
 
+export const fadeOutLeft = {
+  hidden: { opacity: 1, x: 0 },
+  show: {
+    x: -300,
+    opacity: 0,
+    transition: { ease: "easeIn", duration: 3 },
+  },
+};
+
 export const fadeIn = {
   hidden: { opacity: 0, y: 200 },
   show: {

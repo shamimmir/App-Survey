@@ -1,34 +1,35 @@
-export const dataFaq = {
-  title: "FAQ",
-  rows: [
-    {
-      title: "Lorem ipsum dolor sit amet,",
-      content: `Lorem ipsum dolor sit velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-                  Fusce sed commodo purus, at tempus turpis.`,
-    },
-    {
-      title: "Nunc maximus, magna at ultricies elementum",
-      content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
-    },
-  ],
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { pageVariants, pageTransition } from "../../animation";
+import styled from "styled-components";
+import img2 from "../../img/img2.svg";
+import {
+  FormContainer,
+  FormImage,
+  FormQquestion,
+  ImageSideBar,
+} from "../../style";
+
+const Faq = () => {
+  return (
+    <div>
+      <ImageSideBar src={img2} alt="img" />
+      <h3>Lorem ipsum dolor sit amet.</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima in quam
+        quibusdaadipisci quos dicta sit.
+      </p>
+
+      <p>
+        Adipisicing elit. Minima in quam quibusdam! Repellat cupiditate illum
+        sed adipisci quos dicta sit.
+      </p>
+    </div>
+  );
 };
 
-export const stylesFaq = {
-  bgColor: "#fbfbfb",
-  rowPaddingRight: "20px",
-  rowContentPaddingLeft: "20px",
-  rowContentPaddingRight: "20px",
-  titleTextColor: "#a7cb00",
-  rowTitleColor: "#111",
-  rowContentColor: "grey",
-  arrowColor: "#a7cb00",
-  padding: "20",
-  borderBottom: "none",
-};
+export default Faq;
 
-export const config = {
-  animate: true,
-  arrowIcon: ">",
-  // tabFocus: true,
-};
+const Image = styled.img`
+  width: 100%;
+`;

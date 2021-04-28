@@ -4,8 +4,8 @@ import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
 import img2 from "../../img/img2.svg";
 import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
-import { stylesFaq, config, dataFaq } from "./Faq";
-import Faq from "react-faq-component";
+
+import Faq from "./Faq";
 
 class Page extends Component {
   render() {
@@ -18,22 +18,18 @@ class Page extends Component {
           transition={pageTransition}
         >
           <FormImage>
-            <img src={img2} alt="img" />
+            <form class="form">
+              <h2>Are you buying a house or a condo?</h2>
+              <div class="inputGroup">
+                <input id="radio1" name="radio" type="radio" />
+                <label for="radio1">House</label>
+              </div>
+              <div class="inputGroup">
+                <input id="radio2" name="radio" type="radio" />
+                <label for="radio2">Condo</label>
+              </div>
+            </form>
           </FormImage>
-          <FormQquestion>
-            <div className="row">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing:</span>
-              <span>
-                <input
-                  className="slide-up"
-                  id="card"
-                  type="text"
-                  placeholder="Enter A Number!"
-                />
-                <label for="card">Credit Card</label>
-              </span>
-            </div>
-          </FormQquestion>
         </motion.div>
       </FormContainer>
     );
@@ -44,12 +40,7 @@ class PageTips extends Component {
   render() {
     return (
       <FaqStyle>
-        <Faq
-          style={{ paddingRight: 20 }}
-          data={dataFaq}
-          styles={stylesFaq}
-          config={config}
-        />
+        <Faq />
       </FaqStyle>
     );
   }

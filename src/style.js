@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,7 +20,10 @@ export const FormImage = styled.div`
 
 export const FormQquestion = styled.div``;
 
-export const BackGround = styled.div``;
+export const BackGround = styled.div`
+  background-color: #ededed;
+  width: 100%;
+`;
 
 export const FaqStyle = styled.div`
   padding: 20px;
@@ -29,4 +33,9 @@ export const FaqStyle = styled.div`
     padding: 20px;
     margin: 20px;
   }
+`;
+
+export const ImageSideBar = styled.img`
+  width: 100%;
+  height: 100px;
 `;

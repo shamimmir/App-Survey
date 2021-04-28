@@ -1,17 +1,27 @@
 import React, { Component } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { pageVariants, pageTransition } from "../../animation";
+// import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
-import img1 from "../../img/img1.svg";
+import img1 from "../../img/img1-1.jpeg";
 import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+import {
+  fadeOut,
+  fadeIn,
+  pageVariants,
+  pageTransition,
+  fadeOutLeft,
+} from "../../animation";
 
-import { stylesFaq, config, dataFaq } from "./Faq";
-import Faq from "react-faq-component";
+import Faq from "./Faq";
 
 class Page extends Component {
   render() {
     return (
-      <FormContainer>
+      <FormContainer
+        style={{
+          backgroundImage: `url("img1")`,
+        }}
+      >
         <motion.div
           variants={pageVariants}
           initial="in"
@@ -19,22 +29,26 @@ class Page extends Component {
           transition={pageTransition}
         >
           <FormImage>
-            <img src={img1} alt="img" />
+            {/* <motion.div variants={fadeOutLeft} initial="hidden" animate="show"> */}
+
+            <form className="form">
+              <h2>Where do you plan to buy?</h2>
+
+              <div className="row">
+                <span>
+                  <input
+                    className="slide-up"
+                    id="card"
+                    type="text"
+                    placeholder=" Enter your Address!"
+                  />
+                  <label for="card">Location</label>
+                </span>
+              </div>
+            </form>
+
+            {/* </motion.div> */}
           </FormImage>
-          <FormQquestion>
-            <div className="row">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing:</span>
-              <span>
-                <input
-                  className="slide-up"
-                  id="card"
-                  type="text"
-                  placeholder="Enter A Number!"
-                />
-                <label for="card">Credit Card</label>
-              </span>
-            </div>
-          </FormQquestion>
         </motion.div>
       </FormContainer>
     );
@@ -45,12 +59,7 @@ class PageTips extends Component {
   render() {
     return (
       <FaqStyle>
-        <Faq
-          style={{ paddingRight: 20 }}
-          data={dataFaq}
-          styles={stylesFaq}
-          config={config}
-        />
+        <Faq />
       </FaqStyle>
     );
   }

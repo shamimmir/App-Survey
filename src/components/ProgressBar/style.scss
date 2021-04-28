@@ -5,10 +5,195 @@
 // $active: #3498db;
 // $mute: #dfe3e4;
 
-$complete: #ff6584;
-$completeBlink: #b7485e;
-$active: #a7cb00;
+$complete: #00bc9c;
+$completeBlink: #43b39f;
+$active: #5562eb;
 $mute: #dfe3e4;
+
+.switch {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  margin: -30px 0 0 -75px;
+  background: #00bc9c;
+  transition: all 0.2s ease;
+  border-radius: 25px;
+}
+.switch span {
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  margin: -2px 0px 0px -4px;
+  background: #fff;
+  display: block;
+  transform: rotate(-45deg);
+  transition: all 0.2s ease;
+}
+.switch span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  margin-top: -8px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+input[type="radio"] {
+  display: none;
+}
+.switch label {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.2);
+  width: 60px;
+  line-height: 50px;
+  transition: all 0.2s ease;
+}
+label[for="yes"] {
+  position: absolute;
+  left: 0px;
+  height: 20px;
+}
+label[for="no"] {
+  position: absolute;
+  right: 0px;
+}
+#no:checked ~ .switch {
+  // background: #eb4f37;
+  background: $active;
+}
+#no:checked ~ .switch span {
+  background: #fff;
+  margin-left: -8px;
+}
+#no:checked ~ .switch span:after {
+  background: #fff;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#yes:checked ~ .switch label[for="yes"] {
+  color: #fff;
+}
+#no:checked ~ .switch label[for="no"] {
+  color: #fff;
+}
+
+///////////////////////////////////////////////////////////////
+
+.slide-up {
+  display: inline-block;
+  width: 100%;
+  padding: 18px 0px;
+  // font-family: "Open Sans", sans;
+  // font-weight: 400;
+  font-size: 18px;
+  color: $complete;
+  background: #fff;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  text-indent: 80px;
+  transition: all 0.3s ease-in-out;
+
+  &::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+  }
+
+  + label {
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    transform: translateX(0);
+    top: 0;
+    left: 0;
+    padding: 10px 15px;
+    // text-shadow: 0 1px 0 #fff;
+    transition: all 0.3s ease-in-out;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    overflow: hidden;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+    }
+    &:before {
+      top: 6px;
+      left: 5px;
+      right: 5px;
+      bottom: 6px;
+      background: $active;
+    }
+    &:after {
+      top: 0;
+      bottom: 0;
+      background: $active;
+    }
+  }
+}
+span:nth-child(1) .slide-up {
+  text-indent: 105px;
+}
+span:nth-child(3) .slide-up {
+  text-indent: 125px;
+}
+span:nth-child(1) .slide-up:focus,
+span:nth-child(1) .slide-up:active,
+span:nth-child(3) .slide-up:focus,
+span:nth-child(3) .slide-up:active {
+  text-indent: 0;
+}
+.slide-up:focus,
+.slide-up:active {
+  color: $complete;
+  text-indent: 0;
+  background: #fff;
+
+  &::-webkit-input-placeholder {
+    color: #aaa;
+  }
+  + label {
+    transform: translateY(-100%);
+
+    &:before {
+      border-radius: 5px;
+    }
+    &:after {
+      transform: translateY(100%);
+    }
+  }
+}
+
+.row {
+  // width: 100%;
+
+  // margin: 0 auto;
+  // padding: 30px 30px;
+  // margin-bottom: 0;
+  // background-color: rgb(239, 239, 239);
+
+  span {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    margin: 30px 0px;
+  }
+}
+
+/////////////////////////////////////////////////////////////////////
 
 .previous-btn {
   background: #ccc;
@@ -76,7 +261,7 @@ $mute: #dfe3e4;
 
   &:hover {
     transition: all 0.5s;
-    box-shadow: 0px 2px 5px green;
+    box-shadow: 0px 2px 5px gray;
     // padding: 1.1rem 0rem 1.1rem 0rem;
     color: #ffffff;
 
@@ -85,109 +270,6 @@ $mute: #dfe3e4;
       transition: all 0.5s;
       color: #ffffff;
     }
-  }
-}
-
-.slide-up {
-  display: inline-block;
-  width: 215px;
-  padding: 10px 0 10px 15px;
-  font-family: "Open Sans", sans;
-  font-weight: 400;
-  color: $complete;
-  background: #f6f6f6;
-  border: 0;
-  border-radius: 3px;
-  outline: 0;
-  text-indent: 80px; // Arbitrary.
-  transition: all 0.3s ease-in-out;
-
-  &::-webkit-input-placeholder {
-    color: #efefef;
-    text-indent: 0;
-    font-weight: 300;
-  }
-
-  + label {
-    display: inline-block;
-    position: absolute;
-    transform: translateX(0);
-    top: 0;
-    left: 0;
-    padding: 10px 15px;
-    text-shadow: 0 1px 0 #fff;
-    transition: all 0.3s ease-in-out;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    overflow: hidden;
-
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      z-index: -1;
-      transition: all 0.3s ease-in-out;
-    }
-    &:before {
-      top: 6px;
-      left: 5px;
-      right: 5px;
-      bottom: 6px;
-      background: $active;
-    }
-    &:after {
-      top: 0;
-      bottom: 0;
-      background: $active;
-    }
-  }
-}
-span:nth-child(1) .slide-up {
-  text-indent: 105px;
-}
-span:nth-child(3) .slide-up {
-  text-indent: 125px;
-}
-span:nth-child(1) .slide-up:focus,
-span:nth-child(1) .slide-up:active,
-span:nth-child(3) .slide-up:focus,
-span:nth-child(3) .slide-up:active {
-  text-indent: 0;
-}
-.slide-up:focus,
-.slide-up:active {
-  color: $complete;
-  text-indent: 0;
-  background: #fff;
-
-  &::-webkit-input-placeholder {
-    color: #aaa;
-  }
-  + label {
-    transform: translateY(-100%);
-
-    &:before {
-      border-radius: 5px;
-    }
-    &:after {
-      transform: translateY(100%);
-    }
-  }
-}
-
-.row {
-  width: 100%;
-  margin: 0 auto;
-  padding: 30px 30px;
-  margin-bottom: 0;
-  background-color: rgb(239, 239, 239);
-
-  span {
-    position: relative;
-    display: inline-block;
-    margin: 30px 10px;
   }
 }
 
@@ -301,5 +383,100 @@ a {
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.inputGroup {
+  background-color: #fff;
+  // width: 100%;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+
+  label {
+    padding: 12px 30px;
+    // width: 100%;
+    display: block;
+    text-align: left;
+    color: #3c454c;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+
+    &:before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      content: "";
+      background-color: #5562eb;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      width: 32px;
+      height: 32px;
+      content: "";
+      border: 2px solid #d1d7dc;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 200ms ease-in;
+    }
+  }
+
+  input:checked ~ label {
+    color: #fff;
+
+    &:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1;
+    }
+
+    &:after {
+      background-color: #54e0c7;
+      border-color: #54e0c7;
+    }
+  }
+
+  input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+  }
+}
+
+.form {
+  padding: 0 16px;
+  max-width: 550px;
+  margin: 50px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+
+  h3 {
+    padding-top: 2rem;
   }
 }

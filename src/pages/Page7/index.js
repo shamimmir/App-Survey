@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
-import img7 from "../../img/img7.svg";
-import { FormContainer, FormImage, FormQquestion } from "../../style";
+import img3 from "../../img/img3.svg";
+import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+import Faq from "./Faq";
 
 class Page extends Component {
   render() {
@@ -16,22 +17,23 @@ class Page extends Component {
           transition={pageTransition}
         >
           <FormImage>
-            <img src={img7} alt="img" />
+            <form class="form">
+              <h2>What is your employment status?</h2>
+              <div class="inputGroup">
+                <input id="radio1" name="radio" type="radio" />
+                <label for="radio1">Employed</label>
+              </div>
+              <div class="inputGroup">
+                <input id="radio2" name="radio" type="radio" />
+                <label for="radio2">Self-Employed </label>
+              </div>
+
+              <div class="inputGroup">
+                <input id="radio3" name="radio" type="radio" />
+                <label for="radio3">Pension</label>
+              </div>
+            </form>
           </FormImage>
-          <FormQquestion>
-            <div className="row">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing:</span>
-              <span>
-                <input
-                  className="slide-up"
-                  id="card"
-                  type="text"
-                  placeholder="Enter A Number!"
-                />
-                <label for="card">Credit Card</label>
-              </span>
-            </div>
-          </FormQquestion>
         </motion.div>
       </FormContainer>
     );
@@ -40,7 +42,11 @@ class Page extends Component {
 
 class PageTips extends Component {
   render() {
-    return <div>Page 1 Tips</div>;
+    return (
+      <FaqStyle>
+        <Faq />
+      </FaqStyle>
+    );
   }
 }
 
