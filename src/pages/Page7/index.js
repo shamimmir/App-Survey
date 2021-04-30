@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
-import img3 from "../../img/img3.svg";
-import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+import img from "../../img/043-chat.svg";
+import {
+  FormContainer,
+  FormImage,
+  FormQquestion,
+  FaqStyle,
+  ImageF,
+} from "../../style";
 import Faq from "./Faq";
 
 class Page extends Component {
@@ -18,20 +24,67 @@ class Page extends Component {
         >
           <FormImage>
             <form class="form">
-              <h2>What is your employment status?</h2>
-              <div class="inputGroup">
+              <h2>
+                <ImageF>
+                  <motion.img
+                    initial={{ y: "0" }}
+                    animate={{ y: "1vw", rotate: 5 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "mirror",
+                      delay: 1.5,
+                      duration: 3,
+                      type: "Tween",
+                      stiffness: 20,
+                    }}
+                    src={img}
+                  />
+                  What is your employment status?
+                </ImageF>
+              </h2>
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.2,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                class="inputGroup"
+              >
                 <input id="radio1" name="radio" type="radio" />
                 <label for="radio1">Employed</label>
-              </div>
-              <div class="inputGroup">
+              </motion.div>
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.4,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                class="inputGroup"
+              >
                 <input id="radio2" name="radio" type="radio" />
                 <label for="radio2">Self-Employed </label>
-              </div>
+              </motion.div>
 
-              <div class="inputGroup">
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.6,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                class="inputGroup"
+              >
                 <input id="radio3" name="radio" type="radio" />
                 <label for="radio3">Pension</label>
-              </div>
+              </motion.div>
             </form>
           </FormImage>
         </motion.div>

@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
-import img1 from "../../img/img1-1.jpeg";
-import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
-import {
-  fadeOut,
-  fadeIn,
-  pageVariants,
-  pageTransition,
-  fadeOutLeft,
-} from "../../animation";
 
+import {
+  FormContainer,
+  FormImage,
+  FormQquestion,
+  FaqStyle,
+  ImageF,
+} from "../../style";
+import { fadeOut, fadeIn, pageVariants, pageTransition } from "../../animation";
+
+import img from "../../img/023-money-bag.svg";
 import Faq from "./Faq";
 
 class Page extends Component {
@@ -32,9 +33,34 @@ class Page extends Component {
             {/* <motion.div variants={fadeOutLeft} initial="hidden" animate="show"> */}
 
             <form className="form">
-              <h2>What is your gross annual household income, before taxes?</h2>
+              <h2>
+                <ImageF>
+                  <motion.img
+                    initial={{ y: "-20vw" }}
+                    animate={{ y: 0 }}
+                    transition={{
+                      delay: 1.5,
+                      duration: 3,
+                      type: "spring",
+                      stiffness: 20,
+                    }}
+                    src={img}
+                  />
+                  What is your gross annual household income, before taxes?
+                </ImageF>
+              </h2>
 
-              <div className="row">
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.5,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                className="row"
+              >
                 <span>
                   <input
                     className="slide-up"
@@ -44,7 +70,7 @@ class Page extends Component {
                   />
                   <label for="card">Gross Income</label>
                 </span>
-              </div>
+              </motion.div>
             </form>
 
             {/* </motion.div> */}

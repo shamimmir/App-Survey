@@ -2,8 +2,15 @@ import React, { Component } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
-import img1 from "../../img/img1-1.jpeg";
-import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+
+import img from "../../img/019-online-shop-1.svg";
+import {
+  FormContainer,
+  FormImage,
+  FormQquestion,
+  FaqStyle,
+  ImageF,
+} from "../../style";
 import {
   fadeOut,
   fadeIn,
@@ -30,12 +37,18 @@ class Page extends Component {
         >
           <FormImage>
             <form className="form">
-              <h2>Do you have any outstanding balances?</h2>
-              <h3>Line of Credit</h3>
+              <h2>
+                <ImageF>
+                  <img src={img} />
+                  Do you have any outstanding balances?
+                </ImageF>
+              </h2>
+
               <div className="toggle-radio">
+                <span> Line of Credit:</span>
                 <input type="radio" name="rdo" id="yes" checked />
                 <input type="radio" name="rdo" id="no" />
-                <div className="switch">
+                <div style={{ marginTop: "4rem" }} className="switch">
                   <label for="yes">Yes</label>
                   <label for="no">No</label>
                   <span></span>

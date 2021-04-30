@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 // import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
 import img1 from "../../img/img1-1.jpeg";
-import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+import {
+  FormContainer,
+  FormImage,
+  FormQquestion,
+  FaqStyle,
+  ImageF,
+} from "../../style";
 import {
   fadeOut,
   fadeIn,
@@ -13,6 +19,8 @@ import {
 } from "../../animation";
 
 import Faq from "./Faq";
+
+import img from "../../img/017-presentation.svg";
 
 class Page extends Component {
   render() {
@@ -30,12 +38,18 @@ class Page extends Component {
         >
           <FormImage>
             <form className="form">
-              <h2>Do you know your credit score?</h2>
-              <h3>Score</h3>
+              <h2>
+                <ImageF>
+                  <img src={img} />
+                  Do you know your credit score?
+                </ImageF>
+              </h2>
+
               <div className="toggle-radio">
+                <span>Score:</span>
                 <input type="radio" name="rdo" id="yes" checked />
                 <input type="radio" name="rdo" id="no" />
-                <div className="switch">
+                <div style={{ marginTop: "4rem" }} className="switch">
                   <label for="yes">Yes</label>
                   <label for="no">No</label>
                   <span></span>

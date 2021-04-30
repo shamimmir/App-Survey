@@ -28,7 +28,7 @@ export const fadeIn = {
 export const pageVariants = {
   in: {
     opacity: 0,
-    x: "-100vw",
+    x: "100vw",
   },
   out: {
     opacity: 1,
@@ -39,4 +39,6 @@ export const pageVariants = {
 export const pageTransition = {
   type: "spring",
   stiffness: 50,
+  delay: 1,
+  duration: 2,
 };

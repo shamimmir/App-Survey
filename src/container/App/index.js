@@ -8,6 +8,8 @@ import styled from "styled-components";
 import { BackGround } from "../../style";
 import FooterButton from "../../FooterButton";
 
+import Background from "../../img/img1.svg";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeOut, fadeIn, pageVariants, pageTransition } from "../../animation";
 
@@ -68,21 +70,16 @@ export default class App extends Component {
   }
 
   Header() {
-    let { page } = this.state;
-
     return (
       <header>
         <div className="logo">
           <Logo />
         </div>
-        <div className="progress">
-          <ProgressBar items={Pages} itemsSelected={page} />
-        </div>
       </header>
     );
   }
 
-  Footer() {
+  ButtonNextPrev() {
     let { page } = this.state,
       pageCount = Pages.length,
       switchPage = (val) => {
@@ -97,14 +94,24 @@ export default class App extends Component {
       };
 
     return (
+      <div className="Container">
+        <button className="previous-btn" onClick={switchPage(-1)}>
+          Prev
+        </button>
+        <button className="next-btn" onClick={switchPage(1)}>
+          Next
+        </button>
+      </div>
+    );
+  }
+
+  Footer() {
+    let { page } = this.state;
+
+    return (
       <footer>
-        <div className="Container">
-          <button className="previous-btn" onClick={switchPage(-1)}>
-            Prev
-          </button>
-          <button className="next-btn" onClick={switchPage(1)}>
-            Next
-          </button>
+        <div className="progress">
+          <ProgressBar items={Pages} itemsSelected={page} />
         </div>
       </footer>
     );
@@ -123,11 +130,6 @@ export default class App extends Component {
             <CurrView />
           </BackGround>
         </main>
-        <aside>
-          <div>
-            <CurrTip />
-          </div>
-        </aside>
       </div>
     );
   }
@@ -136,6 +138,7 @@ export default class App extends Component {
     let { isLoading } = this.state,
       PageLoading = this.pageLoading.bind(this),
       Header = this.Header.bind(this),
+      ButtonNextPrev = this.ButtonNextPrev.bind(this),
       Footer = this.Footer.bind(this),
       MainContent = this.MainContent.bind(this);
 
@@ -155,7 +158,9 @@ export default class App extends Component {
             className="AppContainer"
           >
             <Header />
-            <MainContent />
+
+            <MainContent style={{ backgroundImage: `url(${Background})` }} />
+            <ButtonNextPrev />
             <Footer />
           </motion.section>
         )}

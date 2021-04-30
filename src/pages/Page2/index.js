@@ -3,7 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animation";
 import styled from "styled-components";
 import img2 from "../../img/img2.svg";
-import { FormContainer, FormImage, FormQquestion, FaqStyle } from "../../style";
+import {
+  FormContainer,
+  FormImage,
+  FormQquestion,
+  FaqStyle,
+  ImageF,
+} from "../../style";
+
+import img from "../../img/020-office.svg";
 
 import Faq from "./Faq";
 
@@ -19,15 +27,52 @@ class Page extends Component {
         >
           <FormImage>
             <form class="form">
-              <h2>Are you buying a house or a condo?</h2>
-              <div class="inputGroup">
+              <h2>
+                <ImageF>
+                  <motion.img
+                    initial={{ x: "0vw" }}
+                    animate={{ x: "-1vw", rotate: 1 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "mirror",
+                      delay: 1.5,
+                      duration: 3,
+                      type: "Tween",
+                      stiffness: 20,
+                    }}
+                    src={img}
+                  />
+                  Are you buying a house or a condo?
+                </ImageF>
+              </h2>
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.5,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                class="inputGroup"
+              >
                 <input id="radio1" name="radio" type="radio" />
                 <label for="radio1">House</label>
-              </div>
-              <div class="inputGroup">
+              </motion.div>
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.7,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                class="inputGroup"
+              >
                 <input id="radio2" name="radio" type="radio" />
                 <label for="radio2">Condo</label>
-              </div>
+              </motion.div>
             </form>
           </FormImage>
         </motion.div>

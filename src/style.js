@@ -21,7 +21,8 @@ export const FormImage = styled.div`
 export const FormQquestion = styled.div``;
 
 export const BackGround = styled.div`
-  background-color: #ededed;
+  /* background-color: #ededed; */
+
   width: 100%;
 `;
 
@@ -38,4 +39,11 @@ export const FaqStyle = styled.div`
 export const ImageSideBar = styled.img`
   width: 100%;
   height: 100px;
+`;
+
+export const ImageF = styled.div`
+  img {
+    width: 50px;
+    height: 50px;
+  }
 `;
