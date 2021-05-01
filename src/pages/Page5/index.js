@@ -52,8 +52,37 @@ class Page extends Component {
                   Do you have any outstanding balances?
                 </ImageF>
               </h2>
+              <p>Credit Card:</p>
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.5,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                class="inputGroup"
+              >
+                <input id="radio1" name="radio" type="radio" />
+                <label for="radio1">Yes</label>
+              </motion.div>
+              <motion.div
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{
+                  delay: 1.7,
+                  duration: 3,
+                  type: "spring",
+                  stiffness: 40,
+                }}
+                class="inputGroup"
+              >
+                <input id="radio2" name="radio" type="radio" />
+                <label for="radio2">No</label>
+              </motion.div>
 
-              <div className="toggle-radio">
+              {/* <div className="toggle-radio">
                 <span>Credit Cards:</span>
                 <input type="radio" name="rdo" id="yes" checked />
                 <input type="radio" name="rdo" id="no" />
@@ -62,7 +91,7 @@ class Page extends Component {
                   <label for="no">No</label>
                   <span></span>
                 </div>
-              </div>
+              </div> */}
             </form>
 
             {/* </motion.div> */}
