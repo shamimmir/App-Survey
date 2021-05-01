@@ -1,14 +1,7 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { pageVariants, pageTransition } from "../../animation";
-import styled from "styled-components";
+
 import img9 from "../../img/img9.svg";
-import {
-  FormContainer,
-  FormImage,
-  FormQquestion,
-  ImageSideBar,
-} from "../../style";
+import { ImageSideBar } from "../../style";
 
 const Faq = () => {
   return (
@@ -24,7 +17,3 @@ const Faq = () => {
 };
 
 export default Faq;
-
-const Image = styled.img`
-  width: 100%;
-`;

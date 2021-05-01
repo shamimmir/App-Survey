@@ -10,12 +10,8 @@ export const FormContainer = styled.div`
 
 export const FormImage = styled.div`
   /* background-color: #fff; */
-  padding: 3rem;
-
-  img {
-    width: 100%;
-    height: 200px;
-  }
+  /* background-color: rgba(51, 170, 51, 0.1);
+  padding: 1.1rem; */
 `;
 
 export const FormQquestion = styled.div``;
@@ -23,7 +19,7 @@ export const FormQquestion = styled.div``;
 export const BackGround = styled.div`
   /* background-color: #ededed; */
 
-  width: 100%;
+  /* width: 100%; */
 `;
 
 export const FaqStyle = styled.div`

@@ -1,16 +1,8 @@
 import React, { Component } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-// import { pageVariants, pageTransition } from "../../animation";
-import styled from "styled-components";
+import { motion } from "framer-motion";
 
-import {
-  FormContainer,
-  FormImage,
-  FormQquestion,
-  FaqStyle,
-  ImageF,
-} from "../../style";
-import { fadeOut, fadeIn, pageVariants, pageTransition } from "../../animation";
+import { FormContainer, FormImage, FaqStyle, ImageF } from "../../style";
+import { pageVariants, pageTransition } from "../../animation";
 
 import img from "../../img/023-money-bag.svg";
 import Faq from "./Faq";
@@ -36,12 +28,15 @@ class Page extends Component {
               <h2>
                 <ImageF>
                   <motion.img
-                    initial={{ y: "-20vw" }}
-                    animate={{ y: 0 }}
+                    style={{ paddingRight: "10px" }}
+                    initial={{ y: "0" }}
+                    animate={{ y: "1vw", rotate: 5 }}
                     transition={{
+                      repeat: Infinity,
+                      repeatType: "mirror",
                       delay: 1.5,
                       duration: 3,
-                      type: "spring",
+                      type: "Tween",
                       stiffness: 20,
                     }}
                     src={img}

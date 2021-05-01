@@ -1,23 +1,9 @@
 import React, { Component } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-// import { pageVariants, pageTransition } from "../../animation";
-import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import img from "../../img/019-online-shop-1.svg";
-import {
-  FormContainer,
-  FormImage,
-  FormQquestion,
-  FaqStyle,
-  ImageF,
-} from "../../style";
-import {
-  fadeOut,
-  fadeIn,
-  pageVariants,
-  pageTransition,
-  fadeOutLeft,
-} from "../../animation";
+import { FormContainer, FormImage, FaqStyle, ImageF } from "../../style";
+import { pageVariants, pageTransition } from "../../animation";
 
 import Faq from "./Faq";
 
@@ -39,7 +25,20 @@ class Page extends Component {
             <form className="form">
               <h2>
                 <ImageF>
-                  <img src={img} />
+                  <motion.img
+                    style={{ paddingRight: "10px" }}
+                    initial={{ y: "0" }}
+                    animate={{ y: "1vw", rotate: 5 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "mirror",
+                      delay: 1.5,
+                      duration: 3,
+                      type: "Tween",
+                      stiffness: 20,
+                    }}
+                    src={img}
+                  />
                   Do you have any outstanding balances?
                 </ImageF>
               </h2>

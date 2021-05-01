@@ -1,22 +1,8 @@
 import React, { Component } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-// import { pageVariants, pageTransition } from "../../animation";
-import styled from "styled-components";
-import img1 from "../../img/img1-1.jpeg";
-import {
-  FormContainer,
-  FormImage,
-  FormQquestion,
-  FaqStyle,
-  ImageF,
-} from "../../style";
-import {
-  fadeOut,
-  fadeIn,
-  pageVariants,
-  pageTransition,
-  fadeOutLeft,
-} from "../../animation";
+import { motion } from "framer-motion";
+
+import { FormContainer, FormImage, FaqStyle, ImageF } from "../../style";
+import { pageVariants, pageTransition } from "../../animation";
 
 import Faq from "./Faq";
 
@@ -40,7 +26,20 @@ class Page extends Component {
             <form className="form">
               <h2>
                 <ImageF>
-                  <img src={img} />
+                  <motion.img
+                    style={{ paddingRight: "10px" }}
+                    initial={{ y: "0" }}
+                    animate={{ y: "1vw", rotate: 5 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "mirror",
+                      delay: 1.5,
+                      duration: 3,
+                      type: "Tween",
+                      stiffness: 20,
+                    }}
+                    src={img}
+                  />
                   Do you know your credit score?
                 </ImageF>
               </h2>

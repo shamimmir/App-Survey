@@ -1,15 +1,8 @@
 import React, { Component } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animation";
-import styled from "styled-components";
 
-import {
-  FormContainer,
-  FormImage,
-  FormQquestion,
-  FaqStyle,
-  ImageF,
-} from "../../style";
+import { FormContainer, FormImage, FaqStyle, ImageF } from "../../style";
 import Faq from "./Faq";
 
 import img from "../../img/042-clipboard.svg";
@@ -29,6 +22,7 @@ class Page extends Component {
               <h2>
                 <ImageF>
                   <motion.img
+                    style={{ paddingRight: "10px" }}
                     initial={{ y: "0" }}
                     animate={{ y: "1vw", rotate: 5 }}
                     transition={{

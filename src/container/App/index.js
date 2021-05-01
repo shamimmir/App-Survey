@@ -4,14 +4,15 @@ import Logo from "../../components/Logo";
 import ProgressBar from "../../components/ProgressBar";
 import Pages from "../../pages";
 import "./App.css";
-import styled from "styled-components";
+
 import { BackGround } from "../../style";
-import FooterButton from "../../FooterButton";
+
+import Journey from "../Journey";
 
 import Background from "../../img/img1.svg";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { fadeOut, fadeIn, pageVariants, pageTransition } from "../../animation";
+import { motion } from "framer-motion";
+import { fadeOut, fadeIn } from "../../animation";
 
 export default class App extends Component {
   constructor() {
@@ -157,7 +158,8 @@ export default class App extends Component {
             animate="show"
             className="AppContainer"
           >
-            <Header />
+            <Journey />
+            {/* <Header /> */}
 
             <MainContent style={{ backgroundImage: `url(${Background})` }} />
             <ButtonNextPrev />
