@@ -60,7 +60,7 @@ class Page extends Component {
                   <input
                     className="slide-up"
                     id="card"
-                    type="text"
+                    type="number"
                     placeholder=" Enter your Number!"
                   />
                   <label for="card">Gross Income</label>

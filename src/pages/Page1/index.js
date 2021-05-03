@@ -19,7 +19,7 @@ class Page extends Component {
           <FormImage>
             {/* <motion.div variants={fadeOutLeft} initial="hidden" animate="show"> */}
 
-            <form className="form">
+            <form className="form" autocomplete="off">
               <h2>
                 <ImageF>
                   <motion.img
